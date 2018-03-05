@@ -13,7 +13,9 @@ node {
 
 pipeline {
   agent {
-    node
+    node {
+      label 'test-pipeline'
+    }
   }
 
   echo "node version:"
