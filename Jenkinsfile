@@ -6,7 +6,7 @@ node {
   sh "whoami"
   echo "DeployId env var is ${env.DEPLOY_ID}"
   env.PATH = "${nodeHome}/bin:${env.PATH}"
-  sh "ls /home/Applications/IBM/"
+  sh "ls /home/Applications"
 
   echo "node version:"
   sh "node -v"
