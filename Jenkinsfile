@@ -1,8 +1,8 @@
+def nodeHome = "/home/Applications/IBM/node6.11.5/node/bin/node"
+
 pipeline {
   agent any
-
-  def nodeHome = "/home/Applications/IBM/node6.11.5/node/bin/node"
-
+  
   environment {
     DEPLOY_ID = "${env.DeployId}"
     DEPLOY_PASSWORD = "${env.DeployPassword}"
