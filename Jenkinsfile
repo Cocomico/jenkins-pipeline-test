@@ -5,6 +5,7 @@ node {
   echo "currently logged in as:"
   sh "whoami"
   echo "DeployId env var is ${env.DEPLOY_ID}"
+  sh "echo ls /home"
   echo "node version:"
   sh "node -v"
 
