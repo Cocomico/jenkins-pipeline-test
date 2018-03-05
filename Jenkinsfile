@@ -5,24 +5,13 @@ node {
   echo "currently logged in as:"
   sh "whoami"
   echo "DeployId env var is ${env.DEPLOY_ID}"
-  env.PATH = "${nodeHome}/bin:${env.PATH}"
-  sh "ls /home/Applications"
-
-  echo "node version:"
-  sh "node -v"
-
-  sh "npm uninstall bower -g"
-  sh "npm install bower -g"
-  sh "rm -Rf Bluemix-Whisk-UI"
-  sh "mkdir Bluemix-Whisk-UI"
-  sh "cd Bluemix-Whisk-UI"
-
 }
 
 pipeline {
   agent {
-    node {
-      label 'test-pipeline'
+    docker {
+      image 'node:6-alpine'
+      args '-p 3000:3000'
     }
   }
 
@@ -35,6 +24,14 @@ pipeline {
   stages {
     stage('Initialize') {
       steps {
+      echo "node version:"
+      sh "node -v"
+
+      sh "npm uninstall bower -g"
+      sh "npm install bower -g"
+      sh "rm -Rf Bluemix-Whisk-UI"
+      sh "mkdir Bluemix-Whisk-UI"
+      sh "cd Bluemix-Whisk-UI"
         echo "Initializing..."
       }
     }
