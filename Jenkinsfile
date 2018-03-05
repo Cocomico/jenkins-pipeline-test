@@ -5,7 +5,15 @@ node {
   echo "currently logged in as:"
   sh "whoami"
   echo "DeployId env var is ${env.DEPLOY_ID}"
-  sh "ls /home"
+  env.PATH = "${nodeHome}/bin:${env.PATH}"
+  sh "which node"
+  sh "ls /home/Applications/IBM/"
+
+}
+
+pipeline {
+  agent node
+
   echo "node version:"
   sh "node -v"
 
@@ -14,10 +22,6 @@ node {
   sh "rm -Rf Bluemix-Whisk-UI"
   sh "mkdir Bluemix-Whisk-UI"
   sh "cd Bluemix-Whisk-UI"
-}
-
-pipeline {
-  agent any
 
   environment {
     DEPLOY_ID = "${env.DeployId}"
