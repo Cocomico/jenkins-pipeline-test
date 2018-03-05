@@ -1,17 +1,19 @@
-def nodeHome = "/home/Applications/IBM/node6.11.5/node/bin/node"
+node {
+  def nodeHome = "/home/Applications/IBM/node6.11.5/node/bin/node"
 
-echo "Starting UI build..."
-echo "currently logged in as:"
-sh "whoami"
-echo "DeployId env var is ${env.DEPLOY_ID}"
-echo "node version:"
-sh "node -v"
+  echo "Starting UI build..."
+  echo "currently logged in as:"
+  sh "whoami"
+  echo "DeployId env var is ${env.DEPLOY_ID}"
+  echo "node version:"
+  sh "node -v"
 
-sh "npm uninstall bower -g"
-sh "npm install bower -g"
-sh "rm -Rf Bluemix-Whisk-UI"
-sh "mkdir Bluemix-Whisk-UI"
-sh "cd Bluemix-Whisk-UI"
+  sh "npm uninstall bower -g"
+  sh "npm install bower -g"
+  sh "rm -Rf Bluemix-Whisk-UI"
+  sh "mkdir Bluemix-Whisk-UI"
+  sh "cd Bluemix-Whisk-UI"
+}
 
 pipeline {
   agent any
