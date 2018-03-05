@@ -1,26 +1,26 @@
 def nodeHome = "/home/Applications/IBM/node6.11.5/node/bin/node"
 
+echo "Starting UI build..."
+echo "currently logged in as:"
+sh "whoami"
+echo "DeployId env var is ${env.DEPLOY_ID}"
+echo "node version:"
+sh "node -v"
+
+sh "npm uninstall bower -g"
+sh "npm install bower -g"
+sh "rm -Rf Bluemix-Whisk-UI"
+sh "mkdir Bluemix-Whisk-UI"
+sh "cd Bluemix-Whisk-UI"
+
 pipeline {
   agent any
-  
+
   environment {
     DEPLOY_ID = "${env.DeployId}"
     DEPLOY_PASSWORD = "${env.DeployPassword}"
     PATH = "${nodeHome}/bin:${env.PATH}"
   }
-
-  echo "Starting UI build..."
-  echo "currently logged in as:"
-  sh "whoami"
-  echo "DeployId env var is ${env.DEPLOY_ID}"
-  echo "node version:"
-  sh "node -v"
-
-  sh "npm uninstall bower -g"
-  sh "npm install bower -g"
-  sh "rm -Rf Bluemix-Whisk-UI"
-  sh "mkdir Bluemix-Whisk-UI"
-  sh "cd Bluemix-Whisk-UI"
 
   stages {
     stage('Initialize') {
