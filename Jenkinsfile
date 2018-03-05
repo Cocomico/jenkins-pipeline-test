@@ -12,7 +12,9 @@ node {
 }
 
 pipeline {
-  agent node
+  agent {
+    node
+  }
 
   echo "node version:"
   sh "node -v"
