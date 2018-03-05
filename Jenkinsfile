@@ -9,15 +9,6 @@ node {
   sh "which node"
   sh "ls /home/Applications/IBM/"
 
-}
-
-pipeline {
-  agent {
-    node {
-      label 'test-pipeline'
-    }
-  }
-
   echo "node version:"
   sh "node -v"
 
@@ -26,6 +17,15 @@ pipeline {
   sh "rm -Rf Bluemix-Whisk-UI"
   sh "mkdir Bluemix-Whisk-UI"
   sh "cd Bluemix-Whisk-UI"
+
+}
+
+pipeline {
+  agent {
+    node {
+      label 'test-pipeline'
+    }
+  }
 
   environment {
     DEPLOY_ID = "${env.DeployId}"
