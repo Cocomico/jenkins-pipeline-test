@@ -26,7 +26,7 @@ pipeline {
       steps {
         echo "${BUILD_ID}"
         echo "${BUILD_NUMBER}"
-        echo "${branch_name}"
+        echo "${branchName}"
         echo "node version:"
         sh "node -v"
 
@@ -35,6 +35,7 @@ pipeline {
         sh "rm -Rf Bluemix-Whisk-UI"
         sh "mkdir Bluemix-Whisk-UI"
         sh "cd Bluemix-Whisk-UI"
+        echo "pwd"
         echo "Initializing..."
       }
     }
