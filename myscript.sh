@@ -2,5 +2,6 @@
 
 printf "Running myscript.sh\n"
 printf "Using branch ${branchName}"
-echo `pwd`
+pwd
+ls -al
 npm install
