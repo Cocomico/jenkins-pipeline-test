@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/Cocomico/jenkins-pipeline-test/issues"
   },
-  "homepage": "https://github.com/Cocomico/jenkins-pipeline-test#readme"
+  "homepage": "https://github.com/Cocomico/jenkins-pipeline-test#readme",
+  "dependencies": {
+    "express": "^4.16.2"
+  }
 }

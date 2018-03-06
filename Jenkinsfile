@@ -24,14 +24,17 @@ pipeline {
   stages {
     stage('Initialize') {
       steps {
-      echo "node version:"
-      sh "node -v"
+        echo "${BUILD_ID}"
+        echo "${BUILD_NUMBER}"
+        echo "${branch_name}"
+        echo "node version:"
+        sh "node -v"
 
-      sh "npm uninstall bower -g"
-      sh "npm install bower -g"
-      sh "rm -Rf Bluemix-Whisk-UI"
-      sh "mkdir Bluemix-Whisk-UI"
-      sh "cd Bluemix-Whisk-UI"
+        sh "npm uninstall bower -g"
+        sh "npm install bower -g"
+        sh "rm -Rf Bluemix-Whisk-UI"
+        sh "mkdir Bluemix-Whisk-UI"
+        sh "cd Bluemix-Whisk-UI"
         echo "Initializing..."
       }
     }
