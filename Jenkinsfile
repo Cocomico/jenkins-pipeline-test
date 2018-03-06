@@ -31,13 +31,13 @@ pipeline {
         sh "node -v"
         sh "npm uninstall bower -g"
         sh "npm install bower -g"
-        sh "pwd ls -al"
+        sh "pwd && ls -al"
         sh "cd Bluemix-Whisk-UI"
       }
     }
     stage('buildAndDeploy') {
       steps {
-        dir Bluemix-Whisk-UI
+        sh "cd Bluemix-Whisk-UI"
         echo "Building and deploying"
         sh "pwd && ls -al"
         sh "sh ./myscript.sh"
