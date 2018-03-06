@@ -22,7 +22,7 @@ pipeline {
   }
 
   stages {
-    stage('Initialize') {
+    stage('Init') {
       steps {
         echo "Initializing..."
         echo "${BUILD_ID}"
