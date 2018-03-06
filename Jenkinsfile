@@ -29,10 +29,10 @@ pipeline {
         echo "${branchName}"
         echo "node version:"
         sh "node -v"
-
         sh "npm uninstall bower -g"
         sh "npm install bower -g"
-        sh "pwd"
+        sh "pwd ls -al"
+        sh "cd Bluemix-Whisk-UI"
       }
     }
     stage('buildAndDeploy') {
