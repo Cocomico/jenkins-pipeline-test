@@ -39,7 +39,7 @@ pipeline {
         echo "Building and deploying"
         sh "pwd && ls -al"
         sh "sh ./Bluemix-Whisk-UI/myscript.sh"
-        sh "rm -Rf Bluemix-Whisk-UI"
+        sh "rm -Rf ./*"
         sh "pwd && ls -al"
       }
     }
