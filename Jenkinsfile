@@ -36,11 +36,11 @@ pipeline {
     }
     stage('buildAndDeploy') {
       steps {
-        sh "cd Bluemix-Whisk-UI"
         echo "Building and deploying"
         sh "pwd && ls -al"
-        sh "sh ./myscript.sh"
-        sh "rm -Rf ./*"
+        sh "sh ./Bluemix-Whisk-UI/myscript.sh"
+        sh "rm -Rf Bluemix-Whisk-UI"
+        sh "pwd && ls -al"
       }
     }
   }
