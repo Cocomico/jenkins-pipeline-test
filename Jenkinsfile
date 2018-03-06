@@ -25,7 +25,7 @@ pipeline {
     stage('Init') {
       steps {
         echo "Initializing..."
-        sh "cd Bluemix-Whisk-UI"
+        sh "cd Bluemix-Whisk-UI && pwd"
         echo "${BUILD_ID}"
         echo "${branchName}"
         echo "node version:"
