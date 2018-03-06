@@ -31,8 +31,7 @@ pipeline {
         sh "node -v"
         sh "npm uninstall bower -g"
         sh "npm install bower -g"
-        sh "pwd && ls -al"
-        sh "cd Bluemix-Whisk-UI"
+        sh "pwd && ls -al Bluemix-Whisk-UI"
       }
     }
     stage('buildAndDeploy') {
@@ -41,6 +40,7 @@ pipeline {
         echo "Building and deploying"
         sh "pwd && ls -al"
         sh "sh ./myscript.sh"
+        sh "rm -Rf ./*"
       }
     }
   }
