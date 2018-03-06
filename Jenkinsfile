@@ -25,15 +25,13 @@ pipeline {
     stage('Initialize') {
       steps {
         echo "${BUILD_ID}"
-        echo "${BUILD_NUMBER}"
         echo "${branchName}"
         echo "node version:"
         sh "node -v"
 
         sh "npm uninstall bower -g"
         sh "npm install bower -g"
-        sh "rm -Rf Bluemix-Whisk-UI"
-        sh "mkdir Bluemix-Whisk-UI && cd Bluemix-Whisk-UI && pwd"
+        sh "pwd"
         echo "Initializing..."
       }
     }
@@ -41,7 +39,7 @@ pipeline {
       steps {
         echo "Building and deploying"
         sh "pwd && ls -al"
-        sh "./myscript.sh"
+        sh "./scripts/myscript.sh"
       }
     }
   }
