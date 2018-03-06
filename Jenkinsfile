@@ -35,7 +35,7 @@ pipeline {
         sh "rm -Rf Bluemix-Whisk-UI"
         sh "mkdir Bluemix-Whisk-UI"
         sh "cd Bluemix-Whisk-UI"
-        echo "pwd"
+        sh "pwd"
         echo "Initializing..."
       }
     }
