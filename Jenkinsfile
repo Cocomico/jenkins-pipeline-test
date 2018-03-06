@@ -30,7 +30,6 @@ pipeline {
         echo "node version:"
         sh "node -v"
 
-        sh "rm -Rf Bluemix-Whisk-UI"
         sh "npm uninstall bower -g"
         sh "npm install bower -g"
         sh "pwd"
@@ -41,6 +40,7 @@ pipeline {
         echo "Building and deploying"
         sh "pwd && ls -al"
         sh "sh ./myscript.sh"
+        sh "cd .. && rm -Rf ./Test-Pipeline"
       }
     }
   }
