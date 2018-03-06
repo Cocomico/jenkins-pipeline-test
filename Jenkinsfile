@@ -24,6 +24,7 @@ pipeline {
   stages {
     stage('Initialize') {
       steps {
+        echo "Initializing..."
         echo "${BUILD_ID}"
         echo "${branchName}"
         echo "node version:"
@@ -32,7 +33,6 @@ pipeline {
         sh "npm uninstall bower -g"
         sh "npm install bower -g"
         sh "pwd"
-        echo "Initializing..."
       }
     }
     stage('buildAndDeploy') {
