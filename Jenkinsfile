@@ -40,7 +40,7 @@ pipeline {
       steps {
         echo "Building and deploying"
         sh "pwd && ls -al"
-        sh "myscript.sh"
+        sh "./myscript.sh"
       }
     }
   }
