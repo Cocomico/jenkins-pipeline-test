@@ -40,7 +40,7 @@ pipeline {
     stage('buildAndDeploy') {
       steps {
         echo "Building and deploying"
-        sh "pwd"
+        sh "pwd && ls -al"
         sh "./myscript.sh"
       }
     }
