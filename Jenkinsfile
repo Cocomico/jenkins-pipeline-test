@@ -33,15 +33,14 @@ pipeline {
         sh "npm uninstall bower -g"
         sh "npm install bower -g"
         sh "rm -Rf Bluemix-Whisk-UI"
-        sh "mkdir Bluemix-Whisk-UI"
-        sh "cd Bluemix-Whisk-UI"
-        sh "pwd"
+        sh "mkdir Bluemix-Whisk-UI && cd Bluemix-Whisk-UI && pwd"
         echo "Initializing..."
       }
     }
     stage('buildAndDeploy') {
       steps {
         echo "Building and deploying"
+        sh "myscript.sh"
       }
     }
   }
